@@ -1,0 +1,1023 @@
+/* ============================================================
+   Skyshore Taxi Service — Tangalle, Sri Lanka
+   css/style.css  —  design system
+
+   PALETTE (restrained, used consistently):
+   --navy    #172B3A   deep navy (bands, footer, text on light)
+   --navy-2  #0F1E29   darker navy (footer bottom)
+   --paper   #F7F6F2   warm off-white (page background)
+   --white   #FFFFFF   cards / form
+   --gold    #BA965B   muted gold (selected accents only)
+   --ink     #252525   dark text
+   --muted   #5C6670   secondary text
+   --line    #E4E0D7   warm hairline borders
+
+   TYPE:
+   Inter     headings, buttons, labels (400/500/600/700)
+   DM Sans   body copy (400/500)
+
+   APPROACH: mobile-first. Base styles are for phones;
+   @media (min-width: 720px / 1020px) add larger layouts.
+   ============================================================ */
+
+/* ---------- 1. DESIGN TOKENS (custom properties) ---------- */
+
+:root {
+  --navy:   #172B3A;
+  --navy-2: #0F1E29;
+  --paper:  #F7F6F2;
+  --white:  #FFFFFF;
+  --gold:   #BA965B;
+  --gold-dark: #A5813F;
+  --gold-text: #8A6D3B;   /* darker gold for small text on light bg (accessible) */
+  --ink:    #252525;
+  --muted:  #4F5A66;   /* dark enough for comfortable reading */
+  --line:   #E4E0D7;
+  --whatsapp: #22A85B;
+
+  --font-head: 'Inter', 'Segoe UI', Arial, sans-serif;
+  --font-body: 'DM Sans', 'Segoe UI', Arial, sans-serif;
+
+  /* gentle 4px radius keeps buttons/cards crisp, not bubbly */
+  --radius: 6px;
+}
+
+/* ---------- 2. RESET & BASE ---------- */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  /* anchors stop below the sticky header, not underneath it */
+  scroll-padding-top: 84px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;  /* cleaner text on Apple devices */
+  -webkit-tap-highlight-color: rgba(186,150,91,0.25); /* gold tap flash (mobile) */
+}
+
+h1, h2, h3 {
+  font-family: var(--font-head);
+  color: var(--navy);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;   /* slightly tighter = modern, editorial */
+}
+
+h2 { font-size: 1.65rem; }
+h3 { font-size: 1.08rem; }
+
+img { max-width: 100%; display: block; }
+
+/* ---------- 3. SHARED PIECES ---------- */
+
+/* Max-width column used by every section */
+.section-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.section { padding: 64px 0; }
+.about, .gallery { background: var(--paper); }
+.vehicles, .services, .contact { background: var(--white); }
+
+/* The overline: small label with a short gold rule above each
+   section title — the one repeating "design signature" of the site */
+.overline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.overline-rule {
+  width: 28px;
+  height: 2px;
+  background: var(--gold);
+  flex: none;
+}
+/* gold text variant (used on navy backgrounds) */
+.overline-gold { color: var(--gold); }
+
+.section-head {
+  max-width: 560px;
+  margin: 0 auto 40px;
+  text-align: left;
+}
+.section-note {
+  color: var(--muted);
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+/* ---------- 4. BUTTONS (rectangular, calm) ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 14px 26px;
+  border-radius: var(--radius);
+  border: 1.5px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.btn-sm { padding: 10px 18px; font-size: 0.88rem; }
+.btn-block { width: 100%; }
+
+/* Gold = the primary action button of the whole site.
+   Navy text on gold passes accessibility contrast (white on gold does not). */
+.btn-gold {
+  background: var(--gold);
+  color: var(--navy);
+}
+.btn-gold:hover {
+  background: var(--navy);
+  color: var(--gold);
+}
+
+/* Outline = secondary action (e.g. Call Us) */
+.btn-outline {
+  border-color: #C9C4BA;
+  color: var(--navy);
+  background: transparent;
+}
+.btn-outline:hover {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* ============================================================
+   5. TOP BAR + HEADER
+   ============================================================ */
+
+/* Contact strip above the header (desktop only, hidden on phones) */
+.topbar {
+  display: none;                 /* MOBILE: hidden entirely */
+  background: var(--navy-2);
+  color: #C9D3DC;
+}
+.topbar-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: var(--font-head);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+.topbar-phones a {
+  color: #C9D3DC;
+  text-decoration: none;
+  margin: 0 4px;
+}
+.topbar-phones a:hover { color: var(--gold); }
+
+/* Sticky white header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  transition: box-shadow 0.25s ease;
+}
+/* JavaScript adds .scrolled for a soft shadow while scrolling */
+.site-header.scrolled { box-shadow: 0 4px 16px rgba(23,43,58,0.08); }
+
+.header-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Text wordmark: "Skyshore" with "Taxi Service" underneath */
+.brand { text-decoration: none; line-height: 1.05; }
+.brand-name {
+  display: block;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+}
+/* the word in gold acts as the accent */
+.brand-name::after { content: "."; color: var(--gold); }
+.brand-sub {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* MOBILE MENU: a white panel that slides down right under the
+   header. JavaScript adds .open after the hamburger is tapped. */
+.site-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 14px 28px rgba(23,43,58,0.10);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+.site-nav.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  list-style: none;
+  padding: 6px 0;
+}
+
+/* Menu links: generous touch targets, hairline separators */
+.nav-link {
+  display: block;
+  padding: 14px 20px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-link:hover, .nav-link:active { color: var(--gold-dark); }
+.nav-link i { color: var(--gold); margin-right: 8px; }
+
+/* The phone number in the menu reads as emphasised text */
+.nav-phone-link { font-weight: 600; color: var(--navy); }
+.nav-phone-link:hover { color: var(--gold-dark); }
+
+/* "Book a Ride" as a full-width gold button inside the menu */
+.nav-list .btn {
+  margin: 10px 16px 14px;
+}
+
+/* Circular quick-call button next to the hamburger (mobile only) */
+.header-call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.header-call:active { background: var(--paper); }
+
+/* Hamburger: 3 bars -> X (JS toggles .open) */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ============================================================
+   6. HERO
+   ============================================================ */
+
+.hero { padding: 52px 0 56px; }
+
+.hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;      /* MOBILE: text above photo */
+  gap: 36px;
+}
+
+.hero h1 {
+  font-size: 2.35rem;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  margin-bottom: 16px;
+}
+
+.hero-lead {
+  font-size: 1.02rem;
+  color: var(--muted);
+  max-width: 460px;
+  margin-bottom: 26px;
+}
+
+/* Full-width primary button on mobile (easy thumb reach) */
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+}
+
+/* Plain keyword row, separated by dots — no icons */
+.hero-keywords {
+  margin-top: 22px;
+  font-family: var(--font-head);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.hero-keywords span { color: var(--muted); margin: 0 6px; }
+
+/* The hero photo: natural 4:5 crop on mobile, small caption below */
+.hero-photo { margin: 0; }
+.hero-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;          /* fills nicely, never stretches */
+  object-position: center 62%; /* keeps the van fully in frame */
+  border-radius: var(--radius);
+}
+/* Small caption under the photo — an honest, human touch */
+.hero-photo figcaption {
+  margin-top: 10px;
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ============================================================
+   7. ABOUT
+   ============================================================ */
+
+.about-grid {
+  display: flex;
+  flex-direction: column;      /* MOBILE: text, then photos */
+  gap: 36px;
+}
+
+.about-copy h2 { margin-bottom: 16px; }
+.about-copy p {
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 14px;
+}
+
+/* Short proof list with hairlines instead of icon bullets */
+.about-points {
+  list-style: none;
+  margin-top: 22px;
+  max-width: 420px;
+}
+.about-points li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-head);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+/* small gold dash as the bullet */
+.about-points li::before {
+  content: "";
+  width: 14px;
+  height: 2px;
+  background: var(--gold);
+  flex: none;
+}
+
+/* Two real photos side by side */
+.about-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.about-photos img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* ============================================================
+   8. VEHICLES
+   ============================================================ */
+
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: 1fr;  /* MOBILE: one vehicle per row */
+  gap: 40px 28px;
+}
+
+.vehicle-photo { margin: 0; }
+.vehicle-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;           /* natural crop, no stretch */
+  object-position: center 65%; /* keeps the vehicle in frame */
+  border-radius: var(--radius);
+  transition: opacity 0.3s ease;
+}
+.vehicle:hover .vehicle-photo img { opacity: 0.92; }
+
+.vehicle-info h3 { margin: 14px 0 6px; }
+.vehicle-info p {
+  color: var(--muted);
+  font-size: 0.93rem;
+  max-width: 420px;
+  margin-bottom: 12px;
+}
+
+/* Text link with arrow — calmer than a big button */
+.enquire-link {
+  font-family: var(--font-head);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+}
+.enquire-link i { font-size: 0.7rem; margin-left: 6px; color: var(--gold); transition: transform 0.2s ease; }
+.enquire-link:hover { color: var(--gold-dark); }
+.enquire-link:hover i { transform: translateX(3px); }
+
+/* ============================================================
+   9. SERVICES (numbered rows, not cards)
+   ============================================================ */
+
+.service-list { border-top: 1px solid var(--line); }
+
+/* Each row is an <a> so the whole row is tappable */
+.service-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 4px;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.service-row:hover { background: var(--paper); }
+
+/* Numbers 01–05 in deep gold (readable against white) */
+.service-num {
+  font-family: var(--font-head);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold-text);
+  flex: none;
+  width: 30px;
+}
+
+.service-body { flex: 1; }
+.service-title {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.service-desc {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+.service-arrow {
+  color: var(--gold);
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+.service-row:hover .service-arrow { transform: translateX(4px); }
+
+/* ============================================================
+   10. BOOKING (navy band + white form)
+   ============================================================ */
+
+.booking {
+  background: var(--navy);
+  padding: 64px 0;
+}
+.booking .section-inner {
+  display: flex;               /* MOBILE: copy on top, form below */
+  flex-direction: column;
+  gap: 40px;
+}
+
+.booking-copy h2 { color: var(--white); }
+.booking-lead {
+  color: #B9C6D2;
+  margin-top: 14px;
+  max-width: 460px;
+}
+
+/* Three short steps, numbered plainly */
+.booking-steps {
+  list-style: none;
+  margin: 24px 0;
+  max-width: 420px;
+}
+.booking-steps li {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  color: #DDE5EC;
+  font-size: 0.95rem;
+}
+.booking-steps strong {
+  font-family: var(--font-head);
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* Honest yellowish note — no fake confirmation */
+.booking-note {
+  color: #C9CFB0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  border-left: 3px solid var(--gold);
+  padding-left: 14px;
+  max-width: 460px;
+}
+.booking-note strong { color: #DFE4A8; }
+
+/* The form card */
+.booking-form {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 26px 20px;
+  width: 100%;
+}
+
+/* MOBILE: one field per row; tablets get two */
+.form-row { display: flex; flex-direction: column; }
+
+.form-group { margin-bottom: 16px; }
+
+.form-group label {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+.required { color: var(--gold-text); }
+
+/* Comfortable touch targets: 15px padding, 16px font (stops iPhone zoom) */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 15px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid #D8D4CB;
+  border-radius: var(--radius);
+  transition: border-color 0.2s ease;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--navy);
+}
+
+.form-group input.invalid,
+.form-group select.invalid { border-color: #C0453E; }
+
+.error-msg {
+  display: none;
+  color: #B23A33;
+  font-size: 0.78rem;
+  margin-top: 5px;
+}
+.error-msg.show { display: block; }
+
+input[type="date"], input[type="time"] { color-scheme: light; }
+
+/* ============================================================
+   11. GALLERY + LIGHTBOX
+   ============================================================ */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;  /* MOBILE: one photo per row */
+  gap: 14px;
+}
+
+.gallery-item {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: zoom-in;
+}
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+.gallery-item:hover img { opacity: 0.9; }
+
+/* Lightbox: dark overlay with one large photo */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(15, 30, 41, 0.94);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;      /* MOBILE: arrows under the photo */
+  gap: 16px;
+  padding: 16px;
+}
+.lightbox.open { display: flex; }
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;         /* whole photo visible, never cropped */
+  border-radius: var(--radius);
+}
+
+.lightbox-close,
+.lightbox-arrow {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: var(--white);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.lightbox-close:hover, .lightbox-arrow:hover {
+  background: var(--gold);
+  color: var(--white);
+}
+.lightbox-close { position: absolute; top: 14px; right: 14px; }
+
+/* ============================================================
+   12. CONTACT
+   ============================================================ */
+
+.contact-cols {
+  display: flex;               /* MOBILE: stacked with hairlines */
+  flex-direction: column;
+}
+
+.contact-col {
+  padding: 26px 4px;
+  border-bottom: 1px solid var(--line);
+}
+.contact-col:first-child { border-top: 1px solid var(--line); }
+
+.contact-col h3 {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.contact-col p { color: var(--muted); margin-bottom: 12px; }
+
+.contact-phone {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  padding: 4px 0;
+}
+.contact-phone:hover { color: var(--gold-dark); }
+
+.contact-link {
+  font-family: var(--font-head);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+}
+.contact-link:hover { color: var(--gold-dark); }
+.contact-link i { font-size: 0.7rem; margin-left: 4px; color: var(--gold); }
+
+.contact-wa-text { font-size: 0.9rem; }
+
+/* ============================================================
+   13. FOOTER
+   ============================================================ */
+
+.footer { background: var(--navy); color: #B9C6D2; }
+
+.footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 20px 36px;
+  display: flex;
+  flex-direction: column;      /* MOBILE: stacked, centered */
+  gap: 26px;
+  align-items: center;
+  text-align: center;
+}
+
+/* brand reuse (white version of the header wordmark) */
+.footer-brand .brand-name { color: var(--white); font-size: 1.15rem; }
+.footer-brand .brand-sub { color: #9DAFBF; }
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+}
+.footer-links a {
+  font-family: var(--font-head);
+  font-size: 0.85rem;
+  color: #B9C6D2;
+  text-decoration: none;
+}
+.footer-links a:hover { color: var(--gold); }
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--font-head);
+  font-size: 0.85rem;
+}
+.footer-contact a { color: #B9C6D2; text-decoration: none; }
+.footer-contact a:hover { color: var(--gold); }
+.footer-contact i { color: var(--gold); margin-right: 6px; width: 16px; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-bottom p {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 18px 20px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: #9DAFBF;
+}
+
+/* ============================================================
+   14. FLOATING WHATSAPP + BACK TO TOP
+   ============================================================ */
+
+/* One calm floating button: green circle, soft shadow, no pulsing */
+.float-whatsapp {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 950;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(15, 30, 41, 0.25);
+  transition: transform 0.2s ease;
+}
+.float-whatsapp:hover { transform: scale(1.08); }
+
+/* Small back-to-top above it; JS adds .show past 500px scroll */
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 84px;
+  z-index: 940;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--navy);
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15,30,41,0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.3s ease;
+}
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover { background: var(--navy); color: var(--white); }
+
+/* ============================================================
+   15. RESPONSIVE STEPS (tablet, then desktop)
+   ============================================================ */
+
+/* Very small phones: slightly calmer type */
+@media (max-width: 360px) {
+  .hero h1 { font-size: 2rem; }
+  h2 { font-size: 1.4rem; }
+}
+
+/* ---------- TABLET: 720px and up ---------- */
+@media (min-width: 720px) {
+
+  .section { padding: 88px 0; }
+  .booking { padding: 88px 0; }
+
+  h2 { font-size: 2rem; }
+
+  /* Hero: readable two-column editorial layout */
+  .hero { padding: 72px 0 80px; }
+  .hero-inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 56px;
+  }
+  .hero-copy { flex: 1.15; }
+  .hero h1 { font-size: 3rem; }
+  .hero-lead { font-size: 1.08rem; }
+  .hero-actions { flex-direction: row; max-width: none; }
+  .hero-photo { flex: 1; }
+  .hero-photo img { aspect-ratio: 4 / 3; }
+
+  /* Forms: two fields per row */
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+  }
+  .booking-form { padding: 32px 28px; }
+
+  /* Vehicle grid: two per row */
+  .vehicle-grid { grid-template-columns: 1fr 1fr; gap: 44px 28px; }
+
+  /* Gallery: two per row */
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Services rows: number | text | arrow in a line */
+  .service-row { gap: 28px; padding: 26px 8px; }
+
+  /* About: text left, photos right */
+  .about-grid {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 56px;
+  }
+  .about-copy { flex: 1.2; }
+  .about-photos { flex: 1; }
+
+  /* Contact columns side by side (no card boxes) */
+  .contact-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .contact-col { border: none; padding: 8px 0; }
+  .contact-col:first-child { border-top: none; }
+
+  /* Booking: copy left, form right */
+  .booking .section-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 64px;
+  }
+  .booking-copy { flex: 1; position: sticky; top: 100px; }
+  .booking-form { flex: 1.25; }
+
+  /* Footer: three aligned columns */
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* ---------- DESKTOP: 1020px and up ---------- */
+@media (min-width: 1020px) {
+
+  /* Top bar of real contact numbers appears */
+  .topbar { display: block; }
+
+  /* Header lifts up because the sticky offset changes slightly */
+  html { scroll-padding-top: 96px; }
+
+  /* Hamburger and quick-call hidden; the normal menu returns */
+  .hamburger, .header-call { display: none; }
+
+  /* Reset the mobile slide-panel into an inline horizontal menu */
+  .site-nav {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    background: none;
+    border-bottom: none;
+    box-shadow: none;
+  }
+  .nav-list {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    padding: 0;
+  }
+  .nav-link {
+    display: inline;
+    padding: 0;
+    border-top: none;
+    font-size: 0.9rem;
+  }
+  .nav-link:hover, .nav-link:active { color: var(--gold-dark); background: none; }
+  .nav-list .btn { margin: 0; }
+
+  .site-nav { display: block; }
+
+  /* Vehicles and gallery: four comfortable columns */
+  .vehicle-grid { grid-template-columns: 1fr 1fr; gap: 52px 32px; }
+  .gallery-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+  /* Contact columns separated by vertical hairlines, cleaner look */
+  .contact-cols { gap: 56px; }
+  .contact-col { position: relative; padding-left: 24px; }
+  .contact-col + .contact-col { border-left: 1px solid var(--line); }
+
+  /* Services always full-width readable rows */
+  .service-list { max-width: 720px; }
+
+  /* Lightbox: arrows at the sides on big screens */
+  .lightbox { flex-direction: row; gap: 20px; }
+  .lightbox img { max-width: 80%; max-height: 84vh; }
+}

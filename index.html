@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       Skyshore Taxi Service - Tangalle, Sri Lanka
+       index.html  -  page structure of the whole website
+       ============================================================ -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO meta tags -->
+  <title>Skyshore Taxi Service — Taxi &amp; Airport Transfers in Tangalle, Sri Lanka</title>
+  <meta name="description" content="Private taxi services in Tangalle, Sri Lanka. Airport transfers, local journeys, wedding cars and comfortable travel across the island. Call or WhatsApp +94 77 396 4515.">
+  <meta name="keywords" content="Tangalle taxi, Sri Lanka taxi service, Tangalle airport transfer, Skyshore Taxi Service">
+  <meta name="author" content="Skyshore Taxi Service">
+
+  <!-- Fonts: Inter (headings/UI) + DM Sans (body text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome: used only for 3 small icons (phone, whatsapp, arrows) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Our stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       TOP BAR  (contact info strip - hidden on small phones,
+       the details stay available in the contact section)
+       ============================================================ -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-location">Tangalle, Sri Lanka</span>
+      <span class="topbar-phones">
+        <a href="tel:+94773964515">+94 77 396 4515</a>
+        <span aria-hidden="true">·</span>
+        <a href="tel:+94701208275">+94 70 120 8275</a>
+      </span>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       HEADER / NAVIGATION  (white, calm, one clear CTA)
+       ============================================================ -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+
+      <!-- Wordmark: simple text logo with a thin gold rule -->
+      <a href="#home" class="brand" aria-label="Skyshore Taxi Service - home">
+        <span class="brand-name">Skyshore</span>
+        <span class="brand-sub">Taxi Service</span>
+      </a>
+
+      <!-- Desktop menu -->
+      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#vehicles" class="nav-link">Vehicles</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li>
+            <a href="tel:+94773964515" class="nav-link nav-phone-link">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <span>+94 77 396 4515</span>
+            </a>
+          </li>
+          <li><a href="#booking" class="btn btn-gold btn-sm">Book a Ride</a></li>
+        </ul>
+      </nav>
+
+      <!-- Quick call button (mobile, next to hamburger) -->
+      <a href="tel:+94773964515" class="header-call" aria-label="Call Skyshore Taxi Service">
+        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="siteNav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- All page content lives inside <main> (screen-reader landmark) -->
+  <main>
+
+  <!-- ============================================================
+       1. HERO  (calm, editorial, one real photograph)
+       ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+
+      <div class="hero-copy">
+        <!-- Small overline: a thin gold rule + label. Used the same way
+             above every section to keep the design consistent. -->
+        <p class="overline"><span class="overline-rule" aria-hidden="true"></span>Taxi Service · Tangalle, Sri Lanka</p>
+
+        <h1>Your Ride, Your&nbsp;Way.</h1>
+
+        <p class="hero-lead">
+          Private taxi services in Tangalle, Sri Lanka. Airport transfers,
+          local journeys and comfortable travel across the island.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#booking" class="btn btn-gold">Book a Ride</a>
+          <a href="tel:+94773964515" class="btn btn-outline"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Us</a>
+        </div>
+
+        <!-- Plain key word list instead of icons/fake badges -->
+        <p class="hero-keywords">
+          Airport transfers <span aria-hidden="true">·</span>
+          Wedding cars <span aria-hidden="true">·</span>
+          Day tours <span aria-hidden="true">·</span>
+          Island-wide travel
+        </p>
+      </div>
+
+      <!-- Real vehicle photograph, natural crop -->
+      <figure class="hero-photo">
+        <img src="assets/images/van.jpg" alt="Skyshore Taxi Service van on the road in Sri Lanka" loading="eager">
+        <figcaption>Skyshore Taxi Service — Tangalle</figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       2. ABOUT  (short editorial text + two real photos)
+       ============================================================ -->
+  <section class="section about" id="about">
+    <div class="section-inner">
+
+      <div class="about-grid">
+        <div class="about-copy">
+          <p class="overline"><span class="overline-rule" aria-hidden="true"></span>About Us</p>
+          <h2>A taxi service you can count&nbsp;on.</h2>
+          <p>
+            Skyshore Taxi Service is a taxi and transportation company based in
+            Tangalle, on the southern coast of Sri Lanka. We drive local journeys,
+            airport transfers, wedding functions and sightseeing trips, always
+            with the same care.
+          </p>
+          <p>
+            Our aim is simple: pick you up on time, drive comfortably and
+            courteously, and make sure you arrive safely at your destination.
+          </p>
+
+          <ul class="about-points">
+            <li>Punctual pickups</li>
+            <li>Comfortable, well-kept vehicles</li>
+            <li>Courteous local drivers</li>
+            <li>Travel anywhere on the island</li>
+          </ul>
+        </div>
+
+        <div class="about-photos">
+          <img src="assets/images/white-car.jpg" alt="Skyshore Taxi Service white car" loading="lazy">
+          <img src="assets/images/grey-car.jpg" alt="Skyshore Taxi Service grey car" loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       3. OUR VEHICLES  (large, natural photos + enquiry links)
+       ============================================================ -->
+  <section class="section vehicles" id="vehicles">
+    <div class="section-inner">
+
+      <header class="section-head">
+        <p class="overline"><span class="overline-rule" aria-hidden="true"></span>Our Fleet</p>
+        <h2>Our Vehicles</h2>
+        <p class="section-note">
+          Ask us about any vehicle on WhatsApp — we will recommend the right
+          one for your trip.
+        </p>
+      </header>
+
+      <div class="vehicle-grid">
+
+        <article class="vehicle">
+          <figure class="vehicle-photo">
+            <img src="assets/images/van.jpg" alt="Skyshore Taxi Service van" loading="lazy">
+          </figure>
+          <div class="vehicle-info">
+            <h3>Van</h3>
+            <p>A practical choice for family trips, group travel and airport runs with luggage.</p>
+            <a class="enquire-link" target="_blank" rel="noopener"
+               href="https://wa.me/94773964515?text=Hello!%20I%20would%20like%20to%20enquire%20about%20the%20Van.">
+              WhatsApp enquiry <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="vehicle">
+          <figure class="vehicle-photo">
+            <img src="assets/images/white-car.jpg" alt="Skyshore Taxi Service white car" loading="lazy">
+          </figure>
+          <div class="vehicle-info">
+            <h3>White Car</h3>
+            <p>Our white car for everyday rides — also available decorated for weddings.</p>
+            <a class="enquire-link" target="_blank" rel="noopener"
+               href="https://wa.me/94773964515?text=Hello!%20I%20would%20like%20to%20enquire%20about%20the%20White%20Car.">
+              WhatsApp enquiry <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="vehicle">
+          <figure class="vehicle-photo">
+            <img src="assets/images/grey-car.jpg" alt="Skyshore Taxi Service grey car" loading="lazy">
+          </figure>
+          <div class="vehicle-info">
+            <h3>Grey Car</h3>
+            <p>A smart, comfortable ride for local trips and long-distance journeys.</p>
+            <a class="enquire-link" target="_blank" rel="noopener"
+               href="https://wa.me/94773964515?text=Hello!%20I%20would%20like%20to%20enquire%20about%20the%20Grey%20Car.">
+              WhatsApp enquiry <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="vehicle">
+          <figure class="vehicle-photo">
+            <img src="assets/images/wedding-cars.jpg" alt="Skyshore Taxi Service wedding cars, decorated" loading="lazy">
+          </figure>
+          <div class="vehicle-info">
+            <h3>Wedding Cars</h3>
+            <p>Our wedding cars, decorated for the day — a comfortable, elegant arrival.</p>
+            <a class="enquire-link" target="_blank" rel="noopener"
+               href="https://wa.me/94773964515?text=Hello!%20I%20would%20like%20to%20enquire%20about%20the%20Wedding%20Cars.">
+              WhatsApp enquiry <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       4. SERVICES  (numbered editorial list, not icon cards)
+       ============================================================ -->
+  <section class="section services" id="services">
+    <div class="section-inner">
+
+      <header class="section-head">
+        <p class="overline"><span class="overline-rule" aria-hidden="true"></span>Services</p>
+        <h2>What we do</h2>
+      </header>
+
+      <div class="service-list">
+
+        <a class="service-row" href="#booking">
+          <span class="service-num" aria-hidden="true">01</span>
+          <span class="service-body">
+            <span class="service-title">Airport Transfers</span>
+            <span class="service-desc">Timely pick-ups and drop-offs between Tangalle and the airport.</span>
+          </span>
+          <i class="fa-solid fa-arrow-right service-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a class="service-row" href="#booking">
+          <span class="service-num" aria-hidden="true">02</span>
+          <span class="service-body">
+            <span class="service-title">Private Taxi Services</span>
+            <span class="service-desc">Door-to-door rides around Tangalle, for errands, evenings or daily travel.</span>
+          </span>
+          <i class="fa-solid fa-arrow-right service-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a class="service-row" href="#booking">
+          <span class="service-num" aria-hidden="true">03</span>
+          <span class="service-body">
+            <span class="service-title">Wedding Car Services</span>
+            <span class="service-desc">Decorated cars and a careful driver for your wedding day.</span>
+          </span>
+          <i class="fa-solid fa-arrow-right service-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a class="service-row" href="#booking">
+          <span class="service-num" aria-hidden="true">04</span>
+          <span class="service-body">
+            <span class="service-title">Sightseeing &amp; Day Tours</span>
+            <span class="service-desc">Relaxed day trips along the southern coast and to nearby attractions.</span>
+          </span>
+          <i class="fa-solid fa-arrow-right service-arrow" aria-hidden="true"></i>
+        </a>
+
+        <a class="service-row" href="#booking">
+          <span class="service-num" aria-hidden="true">05</span>
+          <span class="service-body">
+            <span class="service-title">Long-Distance Transfers</span>
+            <span class="service-desc">Comfortable travel between towns and cities anywhere in Sri Lanka.</span>
+          </span>
+          <i class="fa-solid fa-arrow-right service-arrow" aria-hidden="true"></i>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       5. BOOKING  (deep navy band, simple mobile-friendly form)
+       ============================================================ -->
+  <section class="booking" id="booking">
+    <div class="section-inner booking-grid">
+
+      <!-- Left: honest explanation of the process -->
+      <div class="booking-copy">
+        <p class="overline overline-gold"><span class="overline-rule" aria-hidden="true"></span>Book a Taxi</p>
+        <h2>Request your ride</h2>
+        <p class="booking-lead">
+          Fill in the form and tap the button. WhatsApp opens with your details
+          ready to send us — a quick way to book on any phone.
+        </p>
+
+        <ol class="booking-steps">
+          <li><strong>1.</strong> Fill in your trip details</li>
+          <li><strong>2.</strong> Send the enquiry on WhatsApp</li>
+          <li><strong>3.</strong> We confirm your ride and the fare</li>
+        </ol>
+
+        <p class="booking-note">
+          <strong>Please note:</strong> this form sends a booking enquiry only.
+          Your ride is confirmed once Skyshore Taxi Service replies to you on
+          WhatsApp — no automatic confirmation is made here.
+        </p>
+      </div>
+
+      <!-- Right: the form. "novalidate" lets our JavaScript validate it. -->
+      <form class="booking-form" id="bookingForm" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Full name <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="fullName" name="fullName" autocomplete="name" placeholder="Your name" required>
+            <small class="error-msg" id="fullNameError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone number <span class="required" aria-hidden="true">*</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="e.g. 077 123 4567" required>
+            <small class="error-msg" id="phoneError"></small>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pickup">Pickup location <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="pickup" name="pickup" placeholder="e.g. Tangalle town" required>
+            <small class="error-msg" id="pickupError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="destination">Destination <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="destination" name="destination" placeholder="e.g. Colombo Airport" required>
+            <small class="error-msg" id="destinationError"></small>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date">Travel date <span class="required" aria-hidden="true">*</span></label>
+            <input type="date" id="date" name="date" required>
+            <small class="error-msg" id="dateError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="time">Pickup time <span class="required" aria-hidden="true">*</span></label>
+            <input type="time" id="time" name="time" required>
+            <small class="error-msg" id="timeError"></small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="vehicle">Vehicle <span class="required" aria-hidden="true">*</span></label>
+          <select id="vehicle" name="vehicle" required>
+            <option value="" selected disabled>Select a vehicle</option>
+            <option value="Van">Van</option>
+            <option value="White Car">White Car</option>
+            <option value="Grey Car">Grey Car</option>
+            <option value="Wedding Cars">Wedding Cars</option>
+          </select>
+          <small class="error-msg" id="vehicleError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Additional notes</label>
+          <textarea id="message" name="message" rows="3" placeholder="Anything we should know? (optional)"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-gold btn-block">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Send Enquiry via WhatsApp
+        </button>
+
+      </form>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       6. GALLERY  (the four original photos + lightbox)
+       ============================================================ -->
+  <section class="section gallery" id="gallery">
+    <div class="section-inner">
+
+      <header class="section-head">
+        <p class="overline"><span class="overline-rule" aria-hidden="true"></span>Gallery</p>
+        <h2>Our fleet in pictures</h2>
+      </header>
+
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="assets/images/van.jpg" alt="Skyshore Taxi Service van" loading="lazy">
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/white-car.jpg" alt="Skyshore Taxi Service white car" loading="lazy">
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/grey-car.jpg" alt="Skyshore Taxi Service grey car" loading="lazy">
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/wedding-cars.jpg" alt="Skyshore Taxi Service wedding cars" loading="lazy">
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox overlay (opened by JavaScript when a photo is clicked) -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close photo">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+    <button class="lightbox-arrow" id="lightboxPrev" aria-label="Previous photo">
+      <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+    </button>
+    <img src="" alt="Enlarged gallery photo" id="lightboxImg">
+    <button class="lightbox-arrow" id="lightboxNext" aria-label="Next photo">
+      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+    </button>
+  </div>
+
+
+  <!-- ============================================================
+       7. CONTACT  (plain, honest contact rows)
+       ============================================================ -->
+  <section class="section contact" id="contact">
+    <div class="section-inner">
+
+      <header class="section-head">
+        <p class="overline"><span class="overline-rule" aria-hidden="true"></span>Contact</p>
+        <h2>Get in touch</h2>
+      </header>
+
+      <div class="contact-cols">
+
+        <div class="contact-col">
+          <h3>Location</h3>
+          <p>Skyshore Taxi Service<br>Tangalle, Sri Lanka</p>
+          <a class="contact-link" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/search/?api=1&query=Tangalle%2C+Sri+Lanka">
+            Find us on Google Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="contact-col">
+          <h3>Phone</h3>
+          <a class="contact-phone" href="tel:+94773964515">+94 77 396 4515</a>
+          <a class="contact-phone" href="tel:+94701208275">+94 70 120 8275</a>
+        </div>
+
+        <div class="contact-col">
+          <h3>WhatsApp</h3>
+          <p class="contact-wa-text">The quickest way to reach us, at any hour.</p>
+          <a class="btn btn-gold btn-sm" target="_blank" rel="noopener"
+             href="https://wa.me/94773964515?text=Hello%20Skyshore%20Taxi%20Service!%20I%20would%20like%20to%20ask%20about%20a%20ride.">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Message us on WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============================================================
+       8. FOOTER  (dark, one clear row of links + copyright)
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <span class="brand-name">Skyshore</span>
+        <span class="brand-sub">Taxi Service</span>
+      </div>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#home">Home</a>
+        <a href="#vehicles">Vehicles</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Book a Ride</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer-contact">
+        <a href="tel:+94773964515"><i class="fa-solid fa-phone" aria-hidden="true"></i> +94 77 396 4515</a>
+        <a href="tel:+94701208275"><i class="fa-solid fa-phone" aria-hidden="true"></i> +94 70 120 8275</a>
+        <a href="https://wa.me/94773964515" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Skyshore Taxi Service · Tangalle, Sri Lanka · Taxi &amp; transportation only</p>
+    </div>
+  </footer>
+
+
+  <!-- Floating WhatsApp button (always visible, bottom-right) -->
+  <a class="float-whatsapp" target="_blank" rel="noopener"
+     href="https://wa.me/94773964515?text=Hello%20Skyshore%20Taxi%20Service!%20I%20would%20like%20to%20book%20a%20ride."
+     aria-label="Chat with Skyshore Taxi Service on WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <!-- Back to top (appears after scrolling) -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+
+  <!-- Our JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
