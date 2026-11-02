@@ -5,7 +5,7 @@ Built with **HTML5, CSS3 and vanilla JavaScript** only — no frameworks, no dat
 
 > The project is a **GitHub Pages** repository named **`skyshore-taxi`**.
 > All image/asset paths are relative, so the site works both locally and at
-> `https://YOUR-USERNAME.github.io/skyshore-taxi/`.
+> `https://navodyaishari0-hash.github.io/skyshore-taxi/`.
 
 ## Project structure
 
@@ -41,7 +41,7 @@ instead of a broken image. Originals are kept in the `photo/` folder.
 2. In the repository: **Settings → Pages**.
 3. Under "Build and deployment" choose **Deploy from a branch** → branch `main`, folder `/ (root)`.
 4. Save. The site publishes at:
-   `https://YOUR-USERNAME.github.io/skyshore-taxi/`
+   `https://navodyaishari0-hash.github.io/skyshore-taxi/`
 5. All links (`tel:`, `wa.me`, `#sections`) and relative paths
    (`css/style.css`, `js/script.js`, `assets/images/...`) work as-is — no changes needed.
 
