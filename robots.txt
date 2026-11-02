@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://navodyaishari0-hash.github.io/skyshore-taxi/sitemap.xml

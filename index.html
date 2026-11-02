@@ -10,14 +10,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO meta tags -->
-  <title>Skyshore Taxi Service — Taxi &amp; Airport Transfers in Tangalle, Sri Lanka</title>
-  <meta name="description" content="Private taxi services in Tangalle, Sri Lanka. Airport transfers, local journeys, wedding cars and comfortable travel across the island. Call or WhatsApp +94 77 396 4515.">
-  <meta name="keywords" content="Tangalle taxi, Sri Lanka taxi service, Tangalle airport transfer, Skyshore Taxi Service">
+  <!-- ============================================================
+       SEO meta tags
+       - title: what Google shows as the main blue link
+       - description: the two-line summary under the search result
+       - canonical: tells Google this live GitHub Pages URL is THE
+         official location of this page (no duplicate URLs)
+       ============================================================ -->
+  <title>Skyshore Taxi Service | Taxi &amp; Airport Transfers Tangalle</title>
+  <meta name="description" content="Skyshore Taxi Service offers private taxi services, airport transfers and wedding cars in Tangalle, Sri Lanka. Local journeys and long-distance travel across the island. Call or WhatsApp +94 77 396 4515.">
+  <meta name="keywords" content="taxi service Tangalle, Tangalle taxi, airport taxi Tangalle, private taxi Tangalle, wedding car Tangalle, Tangalle airport transfer, Skyshore Taxi Service, taxi service Sri Lanka">
   <meta name="author" content="Skyshore Taxi Service">
+
+  <!-- Canonical URL: the one official address of this page -->
+  <link rel="canonical" href="https://navodyaishari0-hash.github.io/skyshore-taxi/">
+
+  <!-- Explicitly allow search engines everywhere (double safety,
+       because omissions are what cause indexing problems) -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph tags: used when the link is shared on WhatsApp,
+       Facebook etc. - shows a neat preview card with photo + title -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Skyshore Taxi Service">
+  <meta property="og:title" content="Skyshore Taxi Service | Taxi &amp; Airport Transfers Tangalle">
+  <meta property="og:description" content="Private taxi services, airport transfers and wedding cars in Tangalle, Sri Lanka. Local journeys and long-distance travel across the island.">
+  <meta property="og:url" content="https://navodyaishari0-hash.github.io/skyshore-taxi/">
+  <meta property="og:image" content="https://navodyaishari0-hash.github.io/skyshore-taxi/assets/images/van.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Structured data (JSON-LD): tells Google directly what this
+       business is, where it is and how to phone it. ONLY verified
+       details are included - nothing invented. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Skyshore Taxi Service",
+    "description": "Private taxi services, airport transfers and wedding cars in Tangalle, Sri Lanka.",
+    "url": "https://navodyaishari0-hash.github.io/skyshore-taxi/",
+    "telephone": "+94773964515",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tangalle",
+      "addressCountry": "LK"
+    },
+    "areaServed": [
+      { "@type": "Place", "name": "Tangalle" },
+      { "@type": "Country", "name": "Sri Lanka" }
+    ]
+  }
+  </script>
+
+  <!-- Google Search Console ownership verification.
+       PASTE the meta tag Google gives you in between the
+       comments below (steps are in the README). -->
+  <!-- GSC-VERIFICATION-START -->
+  <!-- <meta name="google-site-verification" content="PUT-YOUR-TOKEN-HERE" /> -->
+  <!-- GSC-VERIFICATION-END -->
+
+  <!-- Loading performance: tell the browser to fetch the hero photo
+       immediately (it is the Largest Contentful Paint element) -->
+  <link rel="preload" href="assets/images/van.jpg" as="image" fetchpriority="high">
 
   <!-- Fonts: Inter (headings/UI) + DM Sans (body text) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Font Awesome: used only for 3 small icons (phone, whatsapp, arrows) -->
@@ -124,9 +183,12 @@
         </p>
       </div>
 
-      <!-- Real vehicle photograph, natural crop -->
+      <!-- Real vehicle photograph, natural crop.
+           fetchpriority + width/height = loads fast, no layout shift -->
       <figure class="hero-photo">
-        <img src="assets/images/van.jpg" alt="Skyshore Taxi Service van on the road in Sri Lanka" loading="eager">
+        <img src="assets/images/van.jpg"
+             alt="Skyshore Taxi Service van for airport transfers and group travel in Tangalle, Sri Lanka"
+             width="576" height="1280" loading="eager" fetchpriority="high">
         <figcaption>Skyshore Taxi Service — Tangalle</figcaption>
       </figure>
 
@@ -164,8 +226,8 @@
         </div>
 
         <div class="about-photos">
-          <img src="assets/images/white-car.jpg" alt="Skyshore Taxi Service white car" loading="lazy">
-          <img src="assets/images/grey-car.jpg" alt="Skyshore Taxi Service grey car" loading="lazy">
+          <img src="assets/images/white-car.jpg" alt="Skyshore Taxi Service white taxi car in Tangalle, Sri Lanka" width="720" height="960" loading="lazy">
+          <img src="assets/images/grey-car.jpg" alt="Skyshore Taxi Service grey taxi car used for island-wide travel" width="1218" height="1599" loading="lazy">
         </div>
       </div>
 
@@ -192,7 +254,7 @@
 
         <article class="vehicle">
           <figure class="vehicle-photo">
-            <img src="assets/images/van.jpg" alt="Skyshore Taxi Service van" loading="lazy">
+            <img src="assets/images/van.jpg" alt="Van for family, group and airport transfer taxi journeys - Skyshore Taxi Service, Tangalle" width="576" height="1280" loading="lazy">
           </figure>
           <div class="vehicle-info">
             <h3>Van</h3>
@@ -206,7 +268,7 @@
 
         <article class="vehicle">
           <figure class="vehicle-photo">
-            <img src="assets/images/white-car.jpg" alt="Skyshore Taxi Service white car" loading="lazy">
+            <img src="assets/images/white-car.jpg" alt="White car for private taxi rides in Tangalle - Skyshore Taxi Service, also decorated for weddings" width="720" height="960" loading="lazy">
           </figure>
           <div class="vehicle-info">
             <h3>White Car</h3>
@@ -220,7 +282,7 @@
 
         <article class="vehicle">
           <figure class="vehicle-photo">
-            <img src="assets/images/grey-car.jpg" alt="Skyshore Taxi Service grey car" loading="lazy">
+            <img src="assets/images/grey-car.jpg" alt="Grey car for private taxi and long-distance travel across Sri Lanka - Skyshore Taxi Service" width="1218" height="1599" loading="lazy">
           </figure>
           <div class="vehicle-info">
             <h3>Grey Car</h3>
@@ -234,7 +296,7 @@
 
         <article class="vehicle">
           <figure class="vehicle-photo">
-            <img src="assets/images/wedding-cars.jpg" alt="Skyshore Taxi Service wedding cars, decorated" loading="lazy">
+            <img src="assets/images/wedding-cars.jpg" alt="Wedding cars decorated for weddings in Tangalle, Sri Lanka - Skyshore Taxi Service" width="1218" height="1599" loading="lazy">
           </figure>
           <div class="vehicle-info">
             <h3>Wedding Cars</h3>
@@ -427,16 +489,16 @@
 
       <div class="gallery-grid">
         <figure class="gallery-item">
-          <img src="assets/images/van.jpg" alt="Skyshore Taxi Service van" loading="lazy">
+          <img src="assets/images/van.jpg" alt="Skyshore Taxi Service van used for family, group and airport transfer rides" width="576" height="1280" loading="lazy">
         </figure>
         <figure class="gallery-item">
-          <img src="assets/images/white-car.jpg" alt="Skyshore Taxi Service white car" loading="lazy">
+          <img src="assets/images/white-car.jpg" alt="Skyshore Taxi Service white car used for private taxi journeys in Tangalle" width="720" height="960" loading="lazy">
         </figure>
         <figure class="gallery-item">
-          <img src="assets/images/grey-car.jpg" alt="Skyshore Taxi Service grey car" loading="lazy">
+          <img src="assets/images/grey-car.jpg" alt="Skyshore Taxi Service grey car used for private and long-distance taxi travel" width="1218" height="1599" loading="lazy">
         </figure>
         <figure class="gallery-item">
-          <img src="assets/images/wedding-cars.jpg" alt="Skyshore Taxi Service wedding cars" loading="lazy">
+          <img src="assets/images/wedding-cars.jpg" alt="Skyshore Taxi Service wedding cars decorated for wedding transportation" width="1218" height="1599" loading="lazy">
         </figure>
       </div>
 
